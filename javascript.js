@@ -6,6 +6,7 @@ var begin = document.querySelector('#beginQuiz');
 var clearance = document.querySelector('#clear');
 var question = document.querySelector('#question');
 var options = document.querySelector('#options');
+var choicebtn = document.createElement('button');
 var c = 76;
 
 var count = 0;
@@ -14,17 +15,16 @@ if (localStorage.getItem('count')) {
   count = localStorage.getItem('count');
   counter.textContent = count;
 }
-clickAnswer.addEventListener('click', function () {
-  counter.textContent = count;
+// clickAnswer.addEventListener('click', function () {
+//   counter.textContent = count;
 
-  localStorage.setItem('count', count);
-});
-rightAnswer.addEventListener('click', function () {
-  count++;
-  counter.textContent = count;
+//   localStorage.setItem('count', count);
+// }); options.addEventListener('click', function () {
+//   count++;
+//   counter.textContent = count;
 
-  localStorage.setItem('count', count);
-});
+//   localStorage.setItem('count', count);
+// });
 
 clearance.addEventListener('click', function () {
   counter.innerHTML = '0';
@@ -42,9 +42,10 @@ function countdownTimer() {
 
 update = setInterval('countdownTimer()', 1000);
 
-let questions = [
+var questions = [
   {
-    questionz: 'What does DOM stand for?',
+    id: 0,
+    questionz: ['What does DOM stand for?'],
     choices: [
       'Definite Object Material',
       'Dominator Of Mystery',
@@ -54,18 +55,22 @@ let questions = [
     correct: 'Document Object Model',
   },
   {
-    questionz:
+    id: 1,
+    questionz: [
       'What is the first language that became popular for website coding',
+    ],
     choices: ['Node.js', 'HTML', 'C++', 'REACT'],
     correct: 'HTML',
   },
   {
-    questionz: 'What year was Javascript created?',
+    id: 2,
+    questionz: ['What year was Javascript created?'],
     choices: ['2006', '1991', '1995', '1928'],
     correct: '1995',
   },
   {
-    questionz: 'What does FullStack Web Development mean?',
+    id: 3,
+    questionz: ['What does FullStack Web Development mean?'],
     choices: [
       'creating a stack of cards with bootstrap',
       '1991',
@@ -75,12 +80,31 @@ let questions = [
     correct: '1928',
   },
 ];
+/*
+var obj = {
+  questionz: 'What does DOM stand for?',
+  questionz:
+    'What is the first language that became popular for website coding',
+  questionz: 'What year was Javascript created?',
+  questionz: 'What does FullStack Web Development mean?',
+};
+var arr = object.keys(obj);
 
-const questionLimit = questions.length - 1;
-let activeQuestion = 0;
+console.log(arr);
+
+var arrObj = arr.map(function (key) {
+  return { [key]: obj[key] };
+});
+
+console.log(arrObj);
+*/
+
+var questionLimit = questions.length - 1;
+var activeQuestion = 0;
 
 function renderQuestion() {
-  let q = questions[activeQuestion];
+  var activeQuestion = 0;
+  q = questions[activeQuestion];
   question.textContent = q.questionz;
   options.innerHTML = '';
   q.choices.forEach(function (choice, i) {
@@ -89,28 +113,43 @@ function renderQuestion() {
     options.appendChild(choicebtn);
     choicebtn.setAttribute('id', 'clickAnswer');
     choice;
-
-    choicebtn.onclick = ansCheck;
+    choicebtn.onclick = nextQ();
   });
 }
-
 renderQuestion();
 
-function ansCheck() {
-  let q = questions[activeQuestion];
-  if (question.textContent === q.correct); {
-    count += 10;
-    renderScore();
+function nextQ() {
+  var currentQuestion = [''];
+  k = questions[currentQuestion];
+  options.innerHTML = '';
+  selection = questions.correct;
+  if ((selection = questions[currentQuestion].correct)) {
+    count++;
   } else {
-    timeLeft -= 10
+    count--;
   }
-  if (activeQuestion < questionLimit) {
-    activeQuestion++;
-    renderQuestion();
-  } 
-    gameOver();
+  if ((selection = k.correct)) {
+    questions[0]++;
   }
 }
+
+nextQ();
+/*
+    let q = questions[activeQuestion];
+    if (question.textContent === q.correct) {
+      count += 10;
+      renderScore();
+    } else {
+      timeLeft -= 10;
+    }
+  }
+  ansCheck();
+  gameOver();
+  if (activeQuestion < questionLimit) {
+    activeQuestion++;
+}
+
+
 
 function renderProgress() {
   for (var qIndex = 0; qIndex <= questionLimit; qIndex++) {
@@ -147,6 +186,11 @@ setInterval(function(){console.log(": seconds left"); }25000)
   choiceC.innerHTML = q.choiceA;
   choiceD.innerHTML = q.choiceA;
 
+
+
+
+
+  choicebtn.onclick = nextQ();
 
 
 

@@ -1,0 +1,127 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+.wrapper {
+  width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+#rightAnswer {
+  border-radius: 4px;
+  border-style: none;
+  box-shadow: rgba(34, 36, 38, 0.15) 0 0 0 0 inset;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+  line-height: 0;
+  padding: 20px;
+}
+
+#rightAnswer {
+  background-color: #2185d0;
+}
+
+#rightAnswer:hover {
+  background-color: #1678c2;
+}
+
+#clickAnswer  {
+  border-radius: 4px;
+  border-style: none;
+  box-shadow: rgba(34, 36, 38, 0.15) 0 0 0 0 inset;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+  line-height: 0;
+  padding: 20px;
+}
+
+#clickAnswer  {
+  background-color: #2185d0;
+}
+
+#clickAnswer:hover {
+  background-color: #1678c2;
+}
+
+button {
+  display: block;
+  margin-top: 6px;
+}
+
+#clear {
+  border-radius: 4px;
+  border-style: none;
+  box-shadow: rgba(34, 36, 38, 0.15) 0 0 0 0 inset;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+  line-height: 0;
+  padding: 20px;
+}
+
+#clear {
+  background-color: #d02156;
+}
+
+#clear:hover {
+  background-color: #d02156;
+}
+
+#timer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 20px;
+}
+
+#beginQuiz {
+  border-radius: 4px;
+  border-style: none;
+  box-shadow: rgba(34, 36, 38, 0.15) 0 0 0 0 inset;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+  line-height: 0;
+  padding: 20px;
+}
+
+#beginQuiz
+ {
+  background-color: #2185d0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 20px;
+}
+
+#beginQuiz:hover {
+  background-color: #1678c2;
+}

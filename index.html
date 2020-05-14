@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Coding Timetracker</title>
+  </head>
+  <body>
+    <h2>Score: <span id="counter"></span></h2>
+    <button id="clear">Clear</button>
+    <h2 id="timer">Timer</h2>
+    <div id="question"></div>
+    <div id="options"></div>
+    <button id="beginQuiz">Begin</button>
+    <div class="wrapper">
+      <h1>Code Quiz</h1>
+      <div id="question"></div>
+      <div id="options"></div>
+      <button id="rightAnswer">Answer A</button>
+      <button id="clickAnswer">Answer B</button>
+      <button id="clickAnswer">Answer C</button>
+      <button id="clickAnswer">Answer D</button>
+    </div>
+    <script src="javascript.js"></script>
+  </body>
+</html>
+
+<!--
+  var counter = document.querySelector('#counter');
+var timeLeft = document.querySelector('#timer');
+var clickAnswer = document.querySelector('#clickAnswer');
+var rightAnswer = document.querySelector('#rightAnswer');
+var begin = document.querySelector('#beginQuiz');
+var clearance = document.querySelector('#clear');
+var c = 76;
+
+var count = 0;
+counter.textContent = count;
+if (localStorage.getItem('count')) {
+  count = localStorage.getItem('count');
+  counter.textContent = count;
+}
+clickAnswer.addEventListener('click', function () {
+  counter.textContent = count;
+
+  localStorage.setItem('count', count);
+});
+rightAnswer.addEventListener('click', function () {
+  count++;
+  counter.textContent = count;
+
+  localStorage.setItem('count', count);
+});
+
+clearance.addEventListener('click', function () {
+  counter.innerHTML = '0';
+});
+
+function countdownTimer() {
+  c = c - 1;
+  if (c < 76) {
+    timeLeft.innerHTML = c + ' :Timer';
+  }
+  if (c < 1) {
+    window.clearInterval(update);
+  }
+}
+
+update = setInterval('countdownTimer()', 1000);
+_-----------------------------------------------------------------------------
+/*
+function setTime(secsLeft) {
+  var timerInterval = setInterval(function () {
+    secsleft = secsLeft - 1;
+    timeLeft.textContent = '' + '  :Time Left';
+
+    if (secsLeft === 0) {
+      clearInterval(timerInterval);
+      sendMessage();
+    }
+  }, 1000);
+}
+setTime();
+*/
+
+/*
+localStorage.removeItem();
+
+setInterval(function(){console.log(": seconds left"); }25000)
+*/
+
+
+
+
+
+<button id="rightAnswer">Answer A</button>
+      <button id="clickAnswer">Answer B</button>
+      <button id="clickAnswer">Answer C</button>
+-->

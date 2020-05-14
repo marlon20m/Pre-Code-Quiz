@@ -103,7 +103,6 @@ var questionLimit = questions.length - 1;
 var activeQuestion = 0;
 
 function renderQuestion() {
-  var activeQuestion = 0;
   q = questions[activeQuestion];
   question.textContent = q.questionz;
   options.innerHTML = '';
@@ -113,17 +112,18 @@ function renderQuestion() {
     options.appendChild(choicebtn);
     choicebtn.setAttribute('id', 'clickAnswer');
     choice;
-    choicebtn.onclick = nextQ();
   });
 }
 renderQuestion();
 
 function nextQ() {
-  var currentQuestion = [''];
+  choicebtn.onclick = nextQ();
+  var currentQuestion = 1;
   k = questions[currentQuestion];
+  question.textContent = k.questionz;
   options.innerHTML = '';
   selection = questions.correct;
-  if ((selection = questions[currentQuestion].correct)) {
+  if ((selection = k.correct)) {
     count++;
   } else {
     count--;
